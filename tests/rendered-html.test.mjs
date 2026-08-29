@@ -31,6 +31,8 @@ test("keeps internal discovery links and sitemap entries", async () => {
 
   assert.match(home, /href="\/autismo-criciuma"/);
   assert.match(home, /href="\/deficiencia-intelectual-criciuma"/);
+  assert.match(home, /src="\/carla-prado-retrato-natural-951\.jpg"/);
+  assert.match(home, /srcSet="\/carla-prado-retrato-natural-640\.jpg 640w, \/carla-prado-retrato-natural-951\.jpg 951w"/);
   assert.match(sitemap, /<loc>https:\/\/carlaprado\.pages\.dev\/autismo-criciuma<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/carlaprado\.pages\.dev\/deficiencia-intelectual-criciuma<\/loc>/);
 });
