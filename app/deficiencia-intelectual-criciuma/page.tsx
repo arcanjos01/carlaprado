@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SupportTopicPage, { type SupportTopic } from "../components/SupportTopicPage";
 
 const topic: SupportTopic = {
+  path: "/deficiencia-intelectual-criciuma",
   eyebrow: "Deficiência intelectual · Criciúma",
   title: "Apoio pedagógico para crianças com deficiência intelectual em Criciúma",
   description: "Acompanhamento individualizado para apoiar aprendizagem, autonomia e participação escolar, respeitando o ritmo, as habilidades e os objetivos de cada criança.",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   title: "Deficiência Intelectual em Criciúma | Carla Prado",
   description: "Apoio pedagógico individualizado para crianças de 6 a 13 anos com deficiência intelectual em Criciúma, com foco em aprendizagem, autonomia e participação escolar.",
   alternates: { canonical: "/deficiencia-intelectual-criciuma" },
-  openGraph: { title: "Deficiência Intelectual em Criciúma | Carla Prado", description: "Apoio pedagógico individualizado para aprendizagem, autonomia e participação escolar.", url: "/deficiencia-intelectual-criciuma", locale: "pt_BR", type: "website" },
+  openGraph: { title: "Deficiência Intelectual em Criciúma | Carla Prado", description: "Apoio pedagógico individualizado para aprendizagem, autonomia e participação escolar.", url: "/deficiencia-intelectual-criciuma", locale: "pt_BR", type: "website", images: [{ url: "/carla-prado-profissional-1122.jpg", width: 1122, height: 1402, alt: "Carla Prado, pedagoga e especialista em desenvolvimento e aprendizagem infantil", type: "image/jpeg" }] },
 };
 
 export default function DeficienciaIntelectualCriciumaPage() {

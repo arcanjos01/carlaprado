@@ -4,6 +4,7 @@ type Card = { title: string; description: string };
 type Faq = { question: string; answer: string };
 
 export type SupportTopic = {
+  path: "/autismo-criciuma" | "/deficiencia-intelectual-criciuma";
   eyebrow: string;
   title: string;
   description: string;
@@ -24,6 +25,10 @@ function LeafMark() {
   return <span className="leaf-mark" aria-hidden="true"><i /><i /><i /></span>;
 }
 
+function WhatsAppIcon() {
+  return <svg className="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2a13.92 13.92 0 0 0-11.94 21.09L2 30l7.12-1.87A14 14 0 1 0 16 2Zm0 25.5a11.48 11.48 0 0 1-5.85-1.6l-.42-.25-4.23 1.11 1.13-4.12-.27-.43A11.5 11.5 0 1 1 16 27.5Zm6.3-8.62c-.35-.18-2.08-1.03-2.4-1.15-.32-.12-.55-.18-.79.18-.23.35-.9 1.15-1.1 1.39-.2.23-.4.26-.75.09a9.34 9.34 0 0 1-2.76-1.7 10.32 10.32 0 0 1-1.91-2.38c-.2-.35 0-.54.16-.71.16-.16.35-.4.52-.6.18-.2.24-.35.35-.59.12-.23.06-.44-.03-.61-.09-.18-.79-1.91-1.08-2.62-.29-.69-.58-.6-.79-.61h-.67c-.23 0-.61.09-.93.44-.32.35-1.22 1.19-1.22 2.9s1.25 3.37 1.42 3.6c.18.24 2.46 3.76 5.96 5.27.83.36 1.48.57 1.99.73.84.27 1.61.23 2.22.14.68-.1 2.08-.85 2.37-1.67.29-.82.29-1.53.2-1.67-.08-.14-.31-.23-.67-.41Z" /></svg>;
+}
+
 function whatsappLink(message: string) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
@@ -34,6 +39,7 @@ export default function SupportTopicPage({ topic }: { topic: SupportTopic }) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: topic.serviceName,
+    url: `https://carlaprado.pages.dev${topic.path}`,
     serviceType: "Acompanhamento pedagógico individualizado",
     description: topic.description,
     provider: {
@@ -55,9 +61,9 @@ export default function SupportTopicPage({ topic }: { topic: SupportTopic }) {
       <Link href="/" className="brand" aria-label="Carla Prado, início"><LeafMark /><span>Carla <strong>Prado</strong></span></Link>
       <nav aria-label="Navegação principal">
         <Link href="/#acompanhamento">Acompanhamento</Link>
-        <Link href="/autismo-criciuma">Autismo</Link>
-        <Link href="/deficiencia-intelectual-criciuma">Deficiência intelectual</Link>
-        <a href={contactHref} target="_blank" rel="noreferrer" className="nav-contact">Conversar</a>
+        <Link href="/autismo-criciuma" aria-current={topic.path === "/autismo-criciuma" ? "page" : undefined}>Autismo</Link>
+        <Link href="/deficiencia-intelectual-criciuma" aria-current={topic.path === "/deficiencia-intelectual-criciuma" ? "page" : undefined}>Deficiência intelectual</Link>
+        <a href={contactHref} target="_blank" rel="noreferrer" className="nav-contact"><WhatsAppIcon /><span className="topic-contact-label-short">Conversar</span><span className="topic-contact-label-full">Conversar pelo WhatsApp</span></a>
       </nav>
     </header>
 
@@ -132,5 +138,6 @@ export default function SupportTopicPage({ topic }: { topic: SupportTopic }) {
     </article>
 
     <footer className="topic-footer"><Link href="/" className="brand"><LeafMark /><span>Carla <strong>Prado</strong></span></Link><p>Desenvolvimento e aprendizagem com um olhar que conecta criança, família e escola.</p><div><Link href="/autismo-criciuma">Autismo</Link><Link href="/deficiencia-intelectual-criciuma">Deficiência intelectual</Link><a href={contactHref} target="_blank" rel="noreferrer">WhatsApp: (48) 99916-3731</a></div><small>© {new Date().getFullYear()} Carla Prado.</small></footer>
+    <a className="whatsapp-float" href={contactHref} target="_blank" rel="noreferrer" aria-label="Conversar com Carla pelo WhatsApp"><WhatsAppIcon /><span className="whatsapp-label-short">Conversar</span><span className="whatsapp-label-full">Conversar pelo WhatsApp</span></a>
   </main>;
 }
