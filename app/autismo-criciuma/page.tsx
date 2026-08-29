@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SupportTopicPage, { type SupportTopic } from "../components/SupportTopicPage";
 
 const topic: SupportTopic = {
+  path: "/autismo-criciuma",
   eyebrow: "Autismo (TEA) · Criciúma",
   title: "Acompanhamento pedagógico para crianças autistas em Criciúma",
   description: "Apoio individualizado para crianças de 6 a 13 anos, conectando aprendizagem, autonomia, rotina, família e escola de forma respeitosa e possível.",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   title: "Acompanhamento para Autismo em Criciúma | Carla Prado",
   description: "Apoio pedagógico para crianças autistas de 6 a 13 anos em Criciúma, com estratégias para aprendizagem, autonomia, rotina e participação escolar.",
   alternates: { canonical: "/autismo-criciuma" },
-  openGraph: { title: "Acompanhamento para Autismo em Criciúma | Carla Prado", description: "Apoio pedagógico individualizado para aprendizagem, autonomia, rotina e participação escolar.", url: "/autismo-criciuma", locale: "pt_BR", type: "website" },
+  openGraph: { title: "Acompanhamento para Autismo em Criciúma | Carla Prado", description: "Apoio pedagógico individualizado para aprendizagem, autonomia, rotina e participação escolar.", url: "/autismo-criciuma", locale: "pt_BR", type: "website", images: [{ url: "/carla-prado-profissional-1122.jpg", width: 1122, height: 1402, alt: "Carla Prado, pedagoga e especialista em desenvolvimento e aprendizagem infantil", type: "image/jpeg" }] },
 };
 
 export default function AutismoCriciumaPage() {
