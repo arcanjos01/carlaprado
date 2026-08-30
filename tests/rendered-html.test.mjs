@@ -53,3 +53,9 @@ test("keeps the about portrait fully framed", async () => {
 
   assert.match(styles, /\.about-image\{min-height:0;aspect-ratio:4\/5;align-self:start\}/);
 });
+
+test("preserves the hero portrait below the neck on small phones", async () => {
+  const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(styles, /@media\(max-width:500px\)\{\.hero-portrait\{height:clamp\(390px,100vw,440px\);min-height:clamp\(390px,100vw,440px\)\}\}/);
+});
