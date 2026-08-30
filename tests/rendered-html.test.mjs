@@ -47,3 +47,9 @@ test("keeps the WhatsApp conversion path visible on mobile topic pages", async (
   assert.match(autism, /class="whatsapp-float"/);
   assert.match(styles, /\.topic-header nav\{display:flex;position:static;inset:auto;/);
 });
+
+test("keeps the about portrait fully framed", async () => {
+  const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(styles, /\.about-image\{min-height:0;aspect-ratio:4\/5;align-self:start\}/);
+});
