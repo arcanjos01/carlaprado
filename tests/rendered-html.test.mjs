@@ -59,3 +59,10 @@ test("preserves the hero portrait below the neck on small phones", async () => {
 
   assert.match(styles, /@media\(max-width:500px\)\{\.hero-portrait\{height:clamp\(390px,100vw,440px\);min-height:clamp\(390px,100vw,440px\)\}\}/);
 });
+
+test("keeps a labeled neurodiversity detail in the home page", async () => {
+  const home = await exportedFile("index.html");
+
+  assert.match(home, /Acolhimento e respeito à neurodiversidade\./);
+  assert.match(home, /class="neurodiversity-note"/);
+});
