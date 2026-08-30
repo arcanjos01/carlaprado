@@ -15,3 +15,4 @@
 @media(max-width:500px){.topic-card-grid{grid-template-columns:1fr}.topic-hero-media{height:345px}.topic-hero .hero-actions{align-items:flex-start;flex-direction:column;gap:20px}.topic-process li{grid-template-columns:40px 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.topic-link-card{transition:none}.button:hover,.topic-link-card:hover{transform:none}}
 .about-image{min-height:0;aspect-ratio:4/5;align-self:start}.about-image .portrait-picture,.about-image .portrait-image{height:100%;min-height:0}@media(max-width:820px){.about-image{min-height:0;aspect-ratio:4/5}}
+@media(max-width:500px){.hero-portrait{height:clamp(390px,100vw,440px);min-height:clamp(390px,100vw,440px)}}
